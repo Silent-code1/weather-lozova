@@ -58,3 +58,30 @@ function getCurrentPosition(event) {
 
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", getCurrentPosition);
+
+let forecastHTML = `<div class="row">`;
+forecast.forEach(function (forecastDay, index) {
+  if (index < 6) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="day-forecast">${formatDay(forecastDay.dt)}</div>
+        <div class = "forecas-icon"> 
+        <img src= "./img/${
+          forecastDay.weather[0].icon
+        }.png" alt="sun-rain-cloud" width="45"/>
+        </div>
+        <div class = "forecast-temperature">
+        <span class = "forecast-temperature-max">${Math.round(
+          forecastDay.temp.max
+        )}°</span> 
+        <span class = "forecast-temperature-min">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
+        </div>
+        <div class="max-min">max &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min</div>
+    </div>
+  `;
+  }
+});
