@@ -1,0 +1,99 @@
+body {
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  padding: 0 20px;
+  background-image: url(https://images.pexels.com/photos/125510/pexels-photo-125510.jpeg?cs=srgb&dl=pexels-kaique-rocha-125510.jpg&fm=jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: rgb(26, 21, 21);
+  font-size: 40px;
+}
+
+p {
+  color: rgb(26, 21, 21);
+  font-size: 20px;
+  margin: 0auto;
+}
+
+.forecast {
+  backdrop-filter: blur(12px);
+  padding: 20px 60px;
+  border-style: solid;
+  border-color: rgba(209, 199, 199, 0.212);
+  width: 850px;
+  height: 640px;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding-left: 75px;
+  font-size: 18px;
+}
+
+form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cloud {
+  width: 90px;
+  height: 85px;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  color: rgb(26, 21, 21);
+  font-weight: lighter;
+  bottom: -500px;
+}
+
+.emoji {
+  width: 55px;
+  height: 45px;
+}
+.container-city {
+  color: blue;
+  margin: 0 auto;
+  position: fixed;
+}
+.container-weather {
+  color: #5a7175;
+  margin: 0 auto;
+}
+.container-weather div.col {
+  margin-left: 13px;
+  padding: 15px 0 15px 0;
+  width: 130;
+}
+
+.temperature {
+  color: rgb(33, 33, 33);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.weather-days {
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  color: rgb(26, 21, 21);
+  font-weight: lighter;
+}
+
+.displayed-city {
+  margin: 0 auto;
+}
+
+.weather-days div.col {
+  margin: 0 auto;
+}
+
+.unit {
+  color: rgb(0, 0, 219);
+}
