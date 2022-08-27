@@ -77,14 +77,13 @@ ul {
   line-height: 1;
 }
 
-.weather-days {
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
-  color: rgb(26, 21, 21);
-  font-weight: lighter;
-}
+.col-2 {
+  color: #596373;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  top: -101px;
+  left: 10px;
 
 .displayed-city {
   margin: 0 auto;
