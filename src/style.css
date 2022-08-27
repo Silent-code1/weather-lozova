@@ -84,15 +84,8 @@ ul {
   position: relative;
   top: -101px;
   left: 10px;
-
-.displayed-city {
-  margin: 0 auto;
 }
 
-.weather-days div.col {
-  margin: 0 auto;
-}
-
-.unit {
+.units {
   color: rgb(0, 0, 219);
 }
