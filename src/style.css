@@ -6,11 +6,6 @@ body {
   background-repeat: no-repeat;
 }
 
-h1 {
-  color: rgb(255, 0, 0);
-  font-size: 40px;
-}
-
 p {
   color: rgb(26, 21, 21);
   font-size: 20px;
@@ -61,7 +56,7 @@ ul {
   position: fixed;
 }
 .container-weather {
-  color: #5a7175;
+  color: #000000;
   margin: 0 auto;
 }
 .container-weather div.col {
