@@ -23,7 +23,7 @@ changeDate.innerHTML = `Today is ${day} ${hours}:${minutes}`;
 
 function changeFahrenheit(event) {
   event.preventDefault();
-  let fahrenheit = document.querySelector("#temperature");
+  let fahrenheit = document.querySelector("#currentTemp");
   let fahrenheitLink = document.querySelector("#fahrenheitLink");
   let celsiusLink = document.querySelector("#celsiusLink");
   celsiusLink.classList.remove("active");
@@ -34,7 +34,7 @@ function changeFahrenheit(event) {
 
 function changeCelsius(event) {
   event.preventDefault();
-  let celsius = document.querySelector("#temperature");
+  let celsius = document.querySelector("#currentTemp");
   let celsiusLink = document.querySelector("#celsiusLink");
   let fahrenheitLink = document.querySelector("#fahrenheitLink");
   celsiusLink.classList.add("active");
@@ -44,7 +44,7 @@ function changeCelsius(event) {
 
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = `${Math.round(
+  document.querySelector("#currentTemp").innerHTML = `${Math.round(
     response.data.main.temp
   )}`;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -80,27 +80,21 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
-function displayCelsius(event) {
-  event.preventDefault();
-  let celsiusLink = document.querySelector("#celsiusLink");
-  celsiusLink.classList.add("active-temp");
-  let fahrenheitink = document.querySelector("#fahrenheitLink");
-  fahrenheitink.classList.remove("active-temp");
-  let todayTemp = document.querySelector("#temperature");
-  console.log(fahrenheitTemperature);
-  todayTemp.innerHTML = Math.round((fahrenheitTemperature - 32) / 1.8);
-}
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let todayTemp = document.querySelector("#temperature");
-  let celsiusLink = document.querySelector("#celsiusLink");
-  celsiusLink.classList.remove("active-temp");
-  todayTemp.innerHTML = Math.round(fahrenheitTemperature);
-}
-let celsiusLink = document.querySelector("#celsiusLink");
-celsiusLink.addEventListener("click", displayCelsius);
-let fahrenheitLink = document.querySelector("#fahrenheitLink");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
+let fahrenheit = document.querySelector("#fahrenheitLink");
+let celsius = document.querySelector("#celsiusLink");
+fahrenheit.addEventListener("click", changeFahrenheit);
+celsius.addEventListener("click", changeCelsius);
+
+let currentCity = document.querySelector("#currentLocation");
+currentCity.addEventListener("click", currentLocation);
+
+let formInput = document.querySelector("#search-form");
+formInput.addEventListener("submit", getWeatherFromSearchForm);
+
+let defaultCity = "Seattle";
+getWeatherByCity(defaultCity);
+
+let celsiusTemperature = null;
 
 let units = "imperial";
 
