@@ -21,6 +21,27 @@ if (minutes < 10) {
 let changeDate = document.querySelector("#date-change");
 changeDate.innerHTML = `Today is ${day} ${hours}:${minutes}`;
 
+function changeFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = document.querySelector("#temperature");
+  let fahrenheitLink = document.querySelector("#fahrenheitLink");
+  let celsiusLink = document.querySelector("#celsiusLink");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  fahrenheit.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function changeCelsius(event) {
+  event.preventDefault();
+  let celsius = document.querySelector("#temperature");
+  let celsiusLink = document.querySelector("#celsiusLink");
+  let fahrenheitLink = document.querySelector("#fahrenheitLink");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  celsius.innerHTML = Math.round(celsiusTemperature);
+}
+
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = `${Math.round(
