@@ -81,8 +81,6 @@ celsiusLink.addEventListener("click", displayCelsius);
 let fahrenheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 
-let fahrenheitTemperature = null;
-
 let units = "imperial";
 
 searchCity("Lozova");
