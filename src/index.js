@@ -59,25 +59,30 @@ function getCurrentPosition(event) {
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
-function showFahrenheitTemperature(event) {
+function displayCelsius(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let celsiusLink = document.querySelector("#celsiusLink");
+  celsiusLink.classList.add("active-temp");
+  let fahrenheitink = document.querySelector("#fahrenheitLink");
+  fahrenheitink.classList.remove("active-temp");
+  let todayTemp = document.querySelector("#temperature");
+  console.log(fahrenheitTemperature);
+  todayTemp.innerHTML = Math.round((fahrenheitTemperature - 32) / 1.8);
 }
-
-let fahrenheitLink = document.querySelector("#fahrenheitLink");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-function showCelsiusTemperature(event) {
+function displayFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let todayTemp = document.querySelector("#temperature");
+  let celsiusLink = document.querySelector("#celsiusLink");
+  celsiusLink.classList.remove("active-temp");
+  todayTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
-
 let celsiusLink = document.querySelector("#celsiusLink");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
+celsiusLink.addEventListener("click", displayCelsius);
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
 
-let fahrenheitLink = document.querySelector(".fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheit);
+let fahrenheitTemperature = null;
+
+let units = "imperial";
+
+searchCity("Lozova");
