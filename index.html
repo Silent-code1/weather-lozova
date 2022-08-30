@@ -1,113 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Weather Lozova</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,300;0,600;1,200;1,300;1,400;1,900&family=PT+Sans:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
 </head>
 
 <body>
-    <div class="forecast">
-        <div class="container">
-            <div class="weather-app-wrapper">
-                <div class="weather-app">
-                    <form class="city-search-form" id="search-form">
-                        <div class="row">
-                            <div class="col-6">
-                                <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
-                                    class="form-control" id="city-input" />
-                            </div>
-                            <div class="col-3">
-                                <input type="submit" value="Search" class="btn btn-primary w-100" />
-                            </div>
+    <div class="container">
+        <div class="weather-app-wrapper">
+            <div class="weather-app">
+                <form id="search-form" class="mb-3">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="search" placeholder="Type a city.." class="form-control" id="city-input"
+                                autocomplete="off" />
                         </div>
-                    </form>
-                    <div class="overview">
-                        <div class="row">
-                            <div class="col">
-                                <h1 id="city-name">Lozova</h1>
-                                <p id="date-change">
-                                    Monday, 16:54
-                                </p>
-                            </div>
-                            <div class="col">
-                                <div class="col-6">
-                                    <span class="temperature" id="currentTemp">27</span>
-                                    <span id="unit_tempearature">
-                                        <a href="#" id="celsius-link">°C</a> |
-                                        <a href="#" id="fahrenhiit-link">°F</a>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <img class="cloud" src="src/images/ukraine-red.png">
-                            </div>
-
-                            <h2>
-                                <ul>
-                                    <li>Humidity: <span id="humidity">10</span>%</li>
-                                    <li>Wind: <span id="wind-speed">50</span> km/h</li>
-                                </ul>
-                            </h2>
+                        <div class="col-3">
+                            <input type="submit" value="Search" class="btn btn-primary w-100" />
                         </div>
                     </div>
-                    <div class="weather-forecast">
-                        <div class="row">
-                            <div class="col-2">
-                                Mon<br />
-                                38ºC <img src="img/img1.png" width="35px" alt="" /><br />
-                            </div>
-                            <div class="col-2">
-                                Mon<br />
-                                38ºC <img src="img/img1.png" width="35px" alt="" /><br />
-                            </div>
-                            <div class="col-2">
-                                Mon<br />
-                                24ºC <img src="img/img2.png" width="42px" alt="" /><br />
-                            </div>
-                            <div class="col-2">
-                                Mon<br />
-                                24ºC <img src="img/img1.png" width="42px" alt="" /><br />
-                            </div>
-                            <div class="col-2">
-                                Mon<br />
-                                24ºC <img src="img/img3.png" width="42px" alt="" /><br />
-                            </div>
-                            <div class="col-2">
-                                Mon <br />
-                                24ºC <img src="img/img3.png" width="42px" alt="" /><br />
-                                <br />
+                </form>
+                <div class="overview">
+                    <h1 id="city"></h1>
+                    <ul>
+                        <li>Last updated: <span id="date"></span></li>
+                        <li id="description"></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="clearfix weather-temperature">
+                            <img src="" alt="Clear" id="icon" class="float-left" />
+                            <div class="float-left">
+                                <strong id="temperature"></strong><span class="units"> °C</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Humidity: <span id="humidity"></span>%</li>
+                            <li>Wind: <span id="wind"></span> m/h</li>
+                        </ul>
                     </div>
                 </div>
+                <div class="weather-forecast" id="forecast"></div>
             </div>
             <small>
-                <a href="https://github.com/Silent-code1/weather-lozova" target="_blank">Open-source code</a>
-                by Liubov Solianik
+                <a href="https://github.com/wecodeschool/vanilla-weather-app" target="_blank">Open-source code</a>
+                by Matt Delac
             </small>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-                crossorigin="anonymous"></script>
-            <script src="https://kit.fontawesome.com/5faaf492ff.js" crossorigin="anonymous"></script>
-            <script src="src/index.js">
-            </script>
+        </div>
+    </div>
+    <script src="src/app.js"></script>
 </body>
 
 </html>
