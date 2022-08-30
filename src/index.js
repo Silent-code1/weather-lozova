@@ -62,7 +62,7 @@ function handleSubmit(event) {
 //Temperature
 function showTemeratureFar(event) {
   event.preventDefault();
-  let bodyTemperature = document.querySelector("temperature");
+  let bodyTemperature = document.querySelector(".temperature");
   bodyTemperature.innerHTML = formulaForeight;
 }
 
@@ -73,7 +73,7 @@ let formulaForeight = (17 * 9) / 5 + 32;
 
 function showTemeratureCel(event) {
   event.preventDefault();
-  let bodyTemperature = document.querySelector("temperature");
+  let bodyTemperature = document.querySelector(".temperature");
   let formulaCelcius = ((formulaForeight - 32) * 5) / 9;
   bodyTemperature.innerHTML = formulaCelcius;
 }
