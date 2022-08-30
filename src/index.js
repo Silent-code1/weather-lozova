@@ -37,16 +37,16 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#date-change");
+
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-
-celsiusTemperature = response.data.main.temp;
-
-temperatureElement.innerHTML = Math.round(celsiusTemperature);
-cityElement.innerHTML = response.data.name;
-descriptionElement.innerHTML = response.data.weather[0].description;
-humidityElement.innerHTML = response.data.main.humidity;
-windElement.innerHTML = Math.round(response.data.wind.speed);
-dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
 function search(city) {
   let apiKey = "c664d12fba35f3eac42867976a8ddf54";
