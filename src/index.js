@@ -21,6 +21,8 @@ if (minutes < 10) {
 let changeDate = document.querySelector("#date-change");
 changeDate.innerHTML = `Today is ${day} ${hours}:${minutes}`;
 
+currentTemp.innerHTML = celsiusTemperature;
+
 function changeFahrenheit(event) {
   event.preventDefault();
   let fahrenheit = document.querySelector("#currentTemp");
@@ -91,7 +93,7 @@ currentCity.addEventListener("click", currentLocation);
 let formInput = document.querySelector("#search-form");
 formInput.addEventListener("submit", getWeatherFromSearchForm);
 
-let defaultCity = "Seattle";
+let defaultCity = "Lozova";
 getWeatherByCity(defaultCity);
 
 let celsiusTemperature = null;
