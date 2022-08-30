@@ -35,7 +35,7 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#city-name");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind-speed");
+  let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date-change");
 
   celsiusTemperature = response.data.main.temp;
