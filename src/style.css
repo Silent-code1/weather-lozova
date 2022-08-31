@@ -12,6 +12,19 @@ p {
   margin: 0auto;
 }
 
+.forecast {
+  backdrop-filter: blur(12px);
+  padding: 20px 60px;
+  border-style: solid;
+  border-color: rgba(209, 199, 199, 0.212);
+  width: 850px;
+  height: 440px;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding-left: 75px;
+  font-size: 18px;
+}
+
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
