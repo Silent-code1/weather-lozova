@@ -9,7 +9,18 @@ body {
 p {
   color: rgb(26, 21, 21);
   font-size: 20px;
-  margin: 0auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  color: rgb(26, 21, 21);
+  font-weight: lighter;
+  bottom: -500px;
 }
 
 .forecast {
@@ -52,17 +63,6 @@ form {
 .cloud {
   width: 90px;
   height: 85px;
-}
-
-ul {
-  list-style: none;
-  text-align: left;
-  font-size: 20px;
-  line-height: 1.4;
-  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
-  color: rgb(26, 21, 21);
-  font-weight: lighter;
-  bottom: -500px;
 }
 
 .emoji {
