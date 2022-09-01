@@ -95,9 +95,9 @@ ul {
   color: #596373;
   font-size: 12px;
   font-weight: bold;
-  position: relative;
+  /* position: relative;
   top: -101px;
-  left: 10px;
+  left: 10px; */
 }
 
 .units {
