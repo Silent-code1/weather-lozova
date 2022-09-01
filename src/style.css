@@ -69,6 +69,7 @@ small {
   color: rgb(26, 21, 21);
   font-size: 20px;
   margin: 0auto;
+  position: relative;
 }
 
 .emoji {
