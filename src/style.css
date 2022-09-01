@@ -27,6 +27,7 @@ ul {
   backdrop-filter: blur(15px);
   padding: 20px 60px;
   border-style: solid;
+  border-radius: 5px;
   border-color: rgba(209, 199, 199, 0.212);
   width: 850px;
   height: 440px;
@@ -92,7 +93,7 @@ form {
 }
 
 .col-2 {
-  color: #596373;
+  color: #343535;
   font-size: 12px;
   font-weight: bold;
   /* position: relative;
